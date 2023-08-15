@@ -20,7 +20,7 @@
     align-items: center;
     flex-direction: column;
 }
-.message {
+.post {
     border: 2px solid black;
     padding: 5px;
     background-color: white;
