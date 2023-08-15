@@ -19,7 +19,7 @@ function App() {
 	
 	
 
-    
+    //testing
 	const handleNewMsgChange = (e) => {
         setNewMessage(e.target.value);
 		setMessageLength(e.target.value.length);
