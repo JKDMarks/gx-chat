@@ -15,12 +15,14 @@ function App() {
     const [message, setNewMessage] = useState("");
 	const [name, setNewName] = useState("");
 	const [color, setNewColor] = useState("#0fa000");
+	const [messageLength, setMessageLength] = useState(0);
 	
 	
 
     
 	const handleNewMsgChange = (e) => {
         setNewMessage(e.target.value);
+		setMessageLength(e.target.value.length);
     };
 	
 	const handleNameChange = (e) => {
@@ -31,10 +33,12 @@ function App() {
 		setNewColor(e.target.value);
 	};
 	
+	
     const handleNewMsgSubmit = (e) => {
         e.preventDefault();
         setPosts([...posts, new post(message,name,color)]);
         setNewMessage("");
+		setMessageLength(0);
     };
 
 	
@@ -53,11 +57,12 @@ function App() {
                 </div>
                 <div id="new-message-box">
                     <form onSubmit={handleNewMsgSubmit}>
-                        <input type="text" value={message} onChange={handleNewMsgChange}></input>
-						<input type="text" value={name} onChange={handleNameChange}></input>
-						<input type="text" value={color} onChange={handleColorChange}></input>
+                        <input type="text" maxlength="1000" value={message} onChange={handleNewMsgChange}></input>
+						<input type="text" maxlength="10" value={name} onChange={handleNameChange}></input>
+						<input type="text" maxlength="7" value={color} onChange={handleColorChange}></input>
                         <button type="submit">Post!</button>
                     </form>
+					<p id="charCounter">{messageLength}/1000</p>
                 </div>
             </div>
         </div>
