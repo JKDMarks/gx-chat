@@ -2,8 +2,16 @@ import React, { useState, useEffect } from "react";
 
 import "./App.css";
 
+class post{
+	constructor(m,n,c){
+		this.message = m;
+		this.name = n;
+		this.color = c;
+	};
+}
+
 function App() {
-    const [posts, setPosts] = useState([["hello", "I love GX!", "#0fa000","cum"],["hlo", "I hate GX!", "#b7ac59","cum"]]);
+    const [posts, setPosts] = useState([]);
     const [message, setNewMessage] = useState("");
 	const [name, setNewName] = useState("");
 	const [color, setNewColor] = useState("#0fa000");
@@ -25,7 +33,7 @@ function App() {
 	
     const handleNewMsgSubmit = (e) => {
         e.preventDefault();
-        setPosts([...posts, [message,name,color]]);
+        setPosts([...posts, new post(message,name,color)]);
         setNewMessage("");
     };
 
@@ -38,8 +46,8 @@ function App() {
                 <div id="chatbox">
                     {posts.map((msg) => (
                         <div className="post">
-							<p className="name" style={{color:msg[2]}}>{msg[1]}</p>
-							<p className="message">{msg[0]}</p>
+							<p className="name" style={{color:msg.color}}>{msg.name}</p>
+							<p className="message">{msg.message}</p>
 						</div>
                     ))}
                 </div>
