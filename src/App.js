@@ -38,7 +38,7 @@ function App() {
 	
     return (
         <div className="App">
-            <img src="/gx-logo.jpg" style={{ position: "sticky", top: "5px", left: "5px", height: "50px" }} />
+            <img src="/gx-logo.jpg" style={{ position: "sticky", top: "5px", left: "5px", height: "200px", mixBlendMode: "difference" }} />
             <div id="chatbox-parent">
                 <div id="chatbox">
                     {posts.map((msg) => (
