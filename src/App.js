@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 
+
 function App() {
     const [posts, setPosts] = useState([]);
     const [message, setNewMessage] = useState("");
@@ -29,7 +30,7 @@ function App() {
 	
     const handleNewMsgSubmit = (e) => {
         e.preventDefault();
-		setPosts([...posts, { message: message, name: name, color: color }]);
+		setPosts([...posts, {message: message, name: name, color: color}]);
         setNewMessage("");
 		setMessageLength(0);
     };
