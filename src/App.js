@@ -4,7 +4,7 @@ import "./App.css";
 
 
 function App() {
-    const [posts, setPosts] = useState([{ message: "cum", name: "name", color: "pink" }]);
+    const [posts, setPosts] = useState([]);
     const [message, setNewMessage] = useState("");
 	const [name, setNewName] = useState("");
 	const [color, setNewColor] = useState("#0fa000");
