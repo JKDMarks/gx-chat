@@ -2,16 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import "./App.css";
 
-class post{
-	constructor(m,n,c){
-		this.message = m;
-		this.name = n;
-		this.color = c;
-	};
-}
 
 function App() {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([{ message: "cum", name: "name", color: "pink" }]);
     const [message, setNewMessage] = useState("");
 	const [name, setNewName] = useState("");
 	const [color, setNewColor] = useState("#0fa000");
@@ -36,7 +29,7 @@ function App() {
 	
     const handleNewMsgSubmit = (e) => {
         e.preventDefault();
-        setPosts([...posts, new post(message,name,color)]);
+		setPosts([...posts, { message: message, name: name, color: color }]);
         setNewMessage("");
 		setMessageLength(0);
     };
