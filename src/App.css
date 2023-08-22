@@ -1,3 +1,7 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
     height: 100%;
 }
@@ -24,7 +28,7 @@
     border: 2px solid black;
     padding: 5px;
     background-color: white;
-    color: red;
+    /* color: red; */
     width: 100%;
 }
 
